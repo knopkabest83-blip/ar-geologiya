@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Мій прогрес · Геоквест ХНУ</title>
+<meta name="description" content="Геоквест кафедри фундаментальної та прикладної геології ХНУ ім. В.Н. Каразіна: знайди 5 геологічних об'єктів у доповненій реальності.">
+<meta name="theme-color" content="#0e1411">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600&family=Golos+Text:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="https://unpkg.com/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<main>
+  <p class="eyebrow">Геоквест кафедри геології ХНУ</p>
+  <h1>Знайди 5 геологічних об'єктів <span>і отримай наліпку</span></h1>
+  <p class="fact">QR-коди сховані поруч із кафедрою. Відскануй кожен, постав об'єкт поруч у AR або зроби з ним селфі. Знахідка зарахується сама.</p>
+  <div style="display:flex;justify-content:space-between;font-size:15px"><span>Зібрано</span><b id="nfound">0 з 5</b></div>
+  <div class="meter"><i></i></div>
+  <div class="list" id="list"></div>
+  <section class="prize" id="prize" hidden>
+    <div class="spin" aria-hidden="true"></div>
+    <div class="badge">Вітаємо, геолог-дослідник!</div>
+    <p class="fact">Покажи цей екран волонтеру кафедри й отримай наліпку.</p>
+    <div class="code" id="code">GEO-</div>
+    <div class="clock" id="clock"></div>
+    <button class="btn primary hold" id="hold" style="width:100%">Утримує волонтер: наліпку видано<i></i></button>
+    <p class="fact" id="claimed" hidden></p>
+  </section>
+  <footer>
+    Кафедра фундаментальної та прикладної геології<br>
+    ХНУ ім. В.Н. Каразіна · geology@karazin.ua<br>
+    <a href="https://geology.univer.kharkov.ua">geology.univer.kharkov.ua</a>
+  </footer>
+</main>
+</body>
+</html>

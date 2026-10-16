@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Бурова вишка · Геоквест ХНУ</title>
+<meta name="description" content="Геоквест кафедри фундаментальної та прикладної геології ХНУ ім. В.Н. Каразіна: знайди 5 геологічних об'єктів у доповненій реальності.">
+<meta name="theme-color" content="#0e1411">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600&family=Golos+Text:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="https://unpkg.com/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<script src="app.js" defer></script>
+</head>
+<body data-station="vyshka">
+<main>
+  <div class="top"><a href="quest.html" id="stn">Станція</a><a href="quest.html" class="dots" aria-label="Мій прогрес"></a></div>
+  <p class="eyebrow">Геоквест · Бурова вишка</p>
+  <h1>Буримо глибше <span>за інших</span></h1>
+  <model-viewer id="mv" src="vyshka.glb" ios-src="vyshka.usdz" alt="Модель бурової вишки з табличкою кафедри"
+    ar ar-modes="webxr scene-viewer quick-look" ar-placement="floor" ar-scale="fixed"
+    camera-controls touch-action="pan-y" auto-rotate rotation-per-second="16deg" camera-orbit="15deg 78deg auto"
+    shadow-intensity="1" shadow-softness="0.7" exposure="1.05"></model-viewer>
+  <div class="actions">
+    <button class="btn primary" id="arBtn">Поставити поруч у AR</button>
+    <button class="btn second" id="selfieBtn">Зробити селфі</button>
+  </div>
+  <p class="fact" id="noAR" hidden>AR відкривається на телефоні. На комп'ютері модель можна покрутити або зробити селфі з веб-камерою.</p>
+  <div class="toast" id="toast" hidden></div>
+  <p class="fact">Газові свердловини в Україні сягають глибини понад 6 км.</p>
+  <footer>
+    Кафедра фундаментальної та прикладної геології<br>
+    ХНУ ім. В.Н. Каразіна · geology@karazin.ua<br>
+    <a href="https://geology.univer.kharkov.ua">geology.univer.kharkov.ua</a>
+  </footer>
+</main>
+
+<div id="selfie" hidden>
+  <div class="shot">
+    <video id="cam" playsinline muted autoplay></video>
+    <div id="mvSlot" data-src="vyshka.glb" data-alt="Модель бурової вишки з табличкою кафедри"></div>
+    <div class="frame-top">Геоквест <span>ХНУ</span></div>
+    <p class="hint">Покрутіть і збільште модель пальцями, станьте поруч і натисніть кнопку.</p>
+    <div class="frame-bottom"><b id="selfieSlogan"></b><small>Кафедра фундаментальної та прикладної геології ХНУ · geology.univer.kharkov.ua</small></div>
+    <div class="count" id="count" aria-live="polite"></div>
+    <div class="err" id="camErr" hidden></div>
+  </div>
+  <div class="bar">
+    <button id="closeSelfie" aria-label="Закрити">✕</button>
+    <button class="shutter" id="shutter" aria-label="Зробити фото"></button>
+    <button id="flip">Камера ⇄</button>
+  </div>
+</div>
+
+<div id="result" hidden>
+  <img id="resImg" alt="Ваше фото з геоквесту">
+  <p>Якщо кнопка не зберігає фото, натисніть і утримуйте зображення.</p>
+  <button class="btn primary" id="save">Зберегти або поділитися</button>
+  <div class="actions"><button class="btn second" id="again">Ще раз</button><button class="btn second" id="done">Готово</button></div>
+</div>
+</body>
+</html>
