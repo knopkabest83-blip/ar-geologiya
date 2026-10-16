@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Граніт науки · AR · Геологія ХНУ</title>
+<meta name="description" content="Поставте гранітний валун у темних окулярах поруч із собою та зробіть фото. Кафедра фундаментальної та прикладної геології ХНУ ім. В.Н. Каразіна.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600&family=Golos+Text:wght@400;500&display=swap">
+<script type="module" src="https://unpkg.com/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<style>
+:root{--bg:#0e1411;--fg:#eef3e6;--muted:#a3b4a6;--lime:#b9f46b;--cyan:#5fe0e6;--ink:#10201a;--stage:#18221d;--line:#2b3a32;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--fg);font-family:"Golos Text","Segoe UI",system-ui,sans-serif}
+main{min-height:100dvh;display:flex;flex-direction:column;gap:14px;max-width:760px;margin:0 auto;
+  padding:calc(16px + env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) calc(16px + env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left))}
+h1{font-family:"Unbounded","Arial Black",sans-serif;font-weight:600;font-size:clamp(22px,6vw,34px);line-height:1.1;margin:0}
+h1 span{color:var(--lime)}
+.sub{margin:0;color:var(--muted);font-size:16px;line-height:1.45}
+model-viewer{flex:1;min-height:58dvh;width:100%;background:var(--stage);border:1px solid var(--line);border-radius:20px;--progress-bar-color:var(--lime)}
+.ar{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);white-space:nowrap;background:var(--lime);color:var(--ink);
+  border:0;border-radius:999px;font:500 18px "Golos Text",sans-serif;padding:15px 26px;cursor:pointer}
+.how{margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.6}
+footer{border-top:2px solid var(--cyan);padding-top:12px;font-size:14px;line-height:1.5;color:var(--muted)}
+footer a{color:var(--cyan);font-weight:500;font-size:17px;text-decoration:none}
+</style>
+</head>
+<body>
+<main>
+  <h1>У інших — граніт науки, <span>у нас — вапняк</span></h1>
+  <p class="sub">Поставте гранітний валун у темних окулярах поруч із собою і зробіть фото.</p>
+  <model-viewer src="kamin.glb" ios-src="kamin.usdz" alt="Гранітний валун у сонячних окулярах поруч із табличкою кафедри геології ХНУ"
+    ar ar-modes="webxr scene-viewer quick-look" ar-placement="floor" ar-scale="fixed"
+    camera-controls touch-action="pan-y" auto-rotate rotation-per-second="18deg" camera-orbit="15deg 78deg 4.2m" camera-target="0.4m 0.7m 0m"
+    shadow-intensity="1" shadow-softness="0.7" exposure="1.05">
+    <button slot="ar-button" class="ar">Поставити поруч у AR</button>
+  </model-viewer>
+  <ol class="how">
+    <li>Натисніть «Поставити поруч у AR» і дозвольте доступ до камери.</li>
+    <li>Поводіть телефоном над підлогою, поки камінь не з'явиться.</li>
+    <li>Станьте поруч і сфотографуйтесь.</li>
+  </ol>
+  <footer>
+    Кафедра фундаментальної та прикладної геології<br>
+    ХНУ ім. В.Н. Каразіна · geology@karazin.ua<br>
+    <a href="https://geology.univer.kharkov.ua">geology.univer.kharkov.ua</a>
+  </footer>
+</main>
+</body>
+</html>
